@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+  const persona = {nombre: "naty", descripcion: "este es mi primer proyecto con React"};
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         Soy {persona.nombre} y {persona.descripcion}
         </p>
         <a
           className="App-link"
