@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from  './components/NavBar';
+import NavBar from  './components/NavBar/NavBar';
+import React from "react";
 
 const App = () => {
   const persona = {nombre: "naty", descripcion: "este es mi primer proyecto con React"};
