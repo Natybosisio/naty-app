@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+.img-carrito{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.titleItem{
+  font-size:20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: gray;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+}
+
