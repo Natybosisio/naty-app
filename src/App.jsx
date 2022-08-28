@@ -2,19 +2,17 @@ import './App.css';
 import NavBar from  './components/NavBar/NavBar';
 import React from "react";
 import ItemListContainer from './container/ItemListContainer';
-
+import ItemCount from './container/ItemCount';
 
 const App = () => {
-  const persona = {nombre: "naty", descripcion: "este es mi primer proyecto con React"};
+ 
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer greeting="Bienvenidos a Maca Joyas"/>
+      <ItemListContainer greeting={"Bienvenidos a Maca Joyas"}/>
       <header className="App-header">
-        <p>
-        Soy {persona.nombre} y {persona.descripcion}
-        </p>
-        
+      <ItemCount stock="5" initial="1" />
+      
       </header>
     </div>
   );
