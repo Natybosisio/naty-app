@@ -31,6 +31,7 @@ function navBar() {
           
         </Navbar.Collapse>
         <CartWidget />
+        
       </Container>
     </Navbar>
   );

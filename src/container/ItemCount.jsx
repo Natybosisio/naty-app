@@ -29,13 +29,12 @@ const ItemCount = ({stock, initial})=>{
                 }, [])
 
         return(
-            <div className="itemCount row">
+            <div className="itemCount">
                 <button className="controles" onClick={disminuir}>-</button>
                 <span>{carrito}</span>
                 <button className="controles" onClick={aumentar}>+</button>                
                 
             <button className="" onClick={agregar}>Agregar</button>
-            <p>Stock disponible {stock}</p>
             <p>Usted tiene {producto} en el carrito</p>
             </div>
         );

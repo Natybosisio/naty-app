@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
 
+
 const ItemList = () => {
     const [productos, setProductos] = useState([])
 
@@ -23,8 +24,10 @@ const ItemList = () => {
     return (
             <div>
                 {productos.map(producto => {
-                    return <Item producto={productos}/>
-                })}
+                    return <Item producto={producto}/>
+                    
+                })}          
+                
             </div>
             )
 }
