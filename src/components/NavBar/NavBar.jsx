@@ -4,9 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import M01 from "./Images/M-01.png";
+import M01 from '../Images/M-01.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartWidget from "./CartWidget";
+import CartWidget from '../CartWidget';
 
 
 function navBar() {
@@ -30,7 +30,7 @@ function navBar() {
           </Nav>
           
         </Navbar.Collapse>
-        <CartWidget />
+        <CartWidget  />
         
       </Container>
     </Navbar>

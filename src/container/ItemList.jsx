@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
-
+import Item  from "./../components/Item";
+import ItemCount from "./ItemCount";
 
 const ItemList = () => {
     const [productos, setProductos] = useState([])
@@ -22,10 +22,14 @@ const ItemList = () => {
     console.log(productos)
 
     return (
-            <div>
+            <div className="row m-5">
                 {productos.map(producto => {
-                    return <Item producto={producto}/>
-                    
+                    return (
+                    <div className="col-3">
+                    <Item producto={producto}/>
+                    <ItemCount stock="5" initial="1"/>
+                    </div>
+                    )
                 })}          
                 
             </div>
@@ -34,3 +38,7 @@ const ItemList = () => {
 
 
 export default ItemList;
+
+
+
+    
