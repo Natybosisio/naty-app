@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Item  from "./../components/Item";
-import ItemCount from "./ItemCount";
+
 
 const ItemList = () => {
     const [productos, setProductos] = useState([])
@@ -27,7 +27,7 @@ const ItemList = () => {
                     return (
                     <div className="col-3">
                     <Item producto={producto}/>
-                    <ItemCount stock="5" initial="1"/>
+                   
                     </div>
                     )
                 })}          

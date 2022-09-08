@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemIndividual from "../components/ItemDetail";
 
 const ItemDetailContainer = (data) => {
+
+    const { productoTitle} = useParams();
 
     const [item, setItem]= useState(0)
 

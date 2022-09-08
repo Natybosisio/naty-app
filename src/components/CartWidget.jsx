@@ -5,10 +5,10 @@ import Carrito from "./Images/cesteria.png";
 function CartWidget (){
 
     return(
-        <div>
+    <div className="carrito row">
     <a href="././inicioSesion.js">  <img src={Carrito} className="img-carrito" alt="carrito"></img>
         </a>
-    <p>Usted tiene XXX en el carrito</p>
+    <p className="">Usted tiene XXX en el carrito</p>
     </div>
     )
 }
