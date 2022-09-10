@@ -1,27 +1,29 @@
 import React from 'react';
 import { Link} from "react-router-dom"
-
+import instagram from "./Images/icons/instagram.png"
+import facebook from "./Images/icons/facebook.png"
+import wp from "./Images/icons/wp.png"
 function Footer(){
 
 return(
 <>
 
-    <div className="footer-redes">
+    <div>
         <h4 >Contactanos</h4>
 
     </div>
-
+                    {/* NO SE COMO HACER UN LINK EXTERNO  */}
     <div>
-        <Link>
-        <img src="src/Images/icons/instagram.png" width="40" height="40" alt="logo-instagram"/>
+        <Link to="/"> 
+        <img src={instagram} width="40" height="40" alt="logo-instagram"/>
         </Link>
 
-        <Link>
-        <img src="src/Images/icons/facebook.png" width="40" height="40" alt="logo-facebook"/>
+        <Link to="/">
+        <img src={facebook} width="40" height="40" alt="logo-facebook"/>
         </Link>
 
-        <Link>
-        <img src="src/Images/icons/wp.png" width="40" height="40" alt="logo-watsapp"/>
+        <Link to="/">
+        <img src={wp} width="40" height="40" alt="logo-watsapp"/>
         </Link>
     </div>
 </>

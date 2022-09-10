@@ -11,7 +11,7 @@ const Item = ({producto}) => {
         <div className="">
           <h5 className="span">{producto.title}</h5>
           
-          <Link to={`/producto/`}>
+          <Link to='/producto/:itemId'>
           <button> Ver Mas</button>
           </Link>
         </div>

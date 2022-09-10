@@ -14,12 +14,15 @@ const ItemDetailContainer = (data) => {
         setTimeout(async() => {
             const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=joyas') 
             const data = await response.json();
-            setItem(data.results[0]);
+            setItem(data.results[0])
+            
+      
         }, 2000);
         
     },[itemId] );
   
-    console.log(item)
+    
+    
     return(
         <>
         <ItemDetail item={item} />
@@ -29,3 +32,7 @@ const ItemDetailContainer = (data) => {
 
 
 export default ItemDetailContainer;
+
+
+
+// `${data.id}`

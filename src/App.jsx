@@ -20,12 +20,12 @@ const App = () => {
     
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/> 
-        <Route path='producto/' element={<ItemDetailContainer/>}/>
+        <Route path='/producto/:itemId' element={<ItemDetailContainer/>}/>
         <Route path='inicioSesion/' element={<InicioSesion/>}/>
         <Route path='registrate/' element={<Registrate/>}/>
       </Routes>
    
-    {/* <Footer/> POR ALGUN MOTIVO NO PUEDO VERLO, ME BLOQUEA LA PAG */}
+    <Footer/>
     </BrowserRouter>
   </div>
   );
