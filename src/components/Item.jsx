@@ -5,12 +5,13 @@ import { Link} from "react-router-dom"
 
 const Item = ({producto}) => {
     return (
-    <div className="card">
+   
+    <div className="card" key={producto.id}>
         <img src={producto.thumbnail} className="cards-img" alt="IMAGEN"/>
-        <div className="card-body">
-          <h5 className="card-title">{producto.title}</h5>
-          <p className="card-text">${producto.price}</p>
-          <Link to={"/producto"}>
+        <div className="">
+          <h5 className="span">{producto.title}</h5>
+          
+          <Link to={`/producto/`}>
           <button> Ver Mas</button>
           </Link>
         </div>

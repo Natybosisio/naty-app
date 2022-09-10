@@ -20,14 +20,10 @@ const ItemCount = ({stock, initial})=>{
         }   
         
         const agregar = ()=>{
-            setProducto(carrito)
-        
+            setProducto(alert("se agrego"))
+           
             }
         
-        useEffect(()=>{
-            agregar()
-                }, [carrito])
-
         return(
             <div className="itemCount">
                 <button className="controles" onClick={disminuir}>-</button>

@@ -2,31 +2,31 @@ import './App.css';
 import NavBar from  './components/NavBar/NavBar';
 import React from "react";
 import ItemListContainer from './container/ItemListContainer';
-import ItemList from './container/ItemList';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import InicioSesion from './components/inicioSesion';
+import Registrate from './components/registrate';
+import Footer from'./components/footer';
+
 
 const App = () => {
- 
+
   return (
     
-    <div className="App ">
+  <div className="App ">
     
     <BrowserRouter>
-    <NavBar/>
-    <div className='listaCategory'>
-    <ItemListContainer greeting={"Categorias - productos"} />
-    </div>
-      <Routes>
-        <Route path='/' element={<ItemList/>}/>
-        <Route path='/producto' element={<ItemDetailContainer/>}/>
-        
-        
-     
-            
-    </Routes>
-    </BrowserRouter>
+      <NavBar/>
     
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/> 
+        <Route path='producto/' element={<ItemDetailContainer/>}/>
+        <Route path='inicioSesion/' element={<InicioSesion/>}/>
+        <Route path='registrate/' element={<Registrate/>}/>
+      </Routes>
+   
+    {/* <Footer/> POR ALGUN MOTIVO NO PUEDO VERLO, ME BLOQUEA LA PAG */}
+    </BrowserRouter>
   </div>
   );
 }

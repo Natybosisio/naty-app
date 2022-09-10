@@ -15,7 +15,6 @@ function navBar() {
       <Container className="containerNav">
 
         <Navbar.Brand>
-          {/* ACA ESTA OK */}
           <Link to="/">
           <img src={M01} className="logo" alt="logo-MacaJoyas" />
           </Link>
@@ -24,12 +23,12 @@ function navBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* ACA NO ME FUNCIONA*/}
-            <Nav.Link>Inicio</Nav.Link>
-            <Nav.Link>productos</Nav.Link>
+            
+            <Nav.Link href="/">Inicio</Nav.Link>
+            
             <NavDropdown title="Ingresar" id="basic-nav-dropdown">
-              <NavDropdown.Item>Inicia Sesión</NavDropdown.Item>
-              <NavDropdown.Item>Registrate</NavDropdown.Item>
+              <NavDropdown.Item href="/InicioSesion">Inicia Sesión</NavDropdown.Item>
+              <NavDropdown.Item href="/Registrate">Registrate</NavDropdown.Item>
               <NavDropdown.Divider />
               </NavDropdown>
               

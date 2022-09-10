@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemIndividual from "../components/ItemDetail";
+import ItemDetail from "../components/ItemDetail";
 
 const ItemDetailContainer = (data) => {
 
-    const { productoTitle} = useParams();
-
     const [item, setItem]= useState(0)
+
+    const {itemId} = useParams()
 
     useEffect(()=>{
         setTimeout(async() => {
@@ -17,12 +17,12 @@ const ItemDetailContainer = (data) => {
             setItem(data.results[0]);
         }, 2000);
         
-    },[] );
+    },[itemId] );
   
-
+    console.log(item)
     return(
         <>
-        <ItemIndividual item={item} setItem={setItem}/>
+        <ItemDetail item={item} />
         </>
     )
 }
