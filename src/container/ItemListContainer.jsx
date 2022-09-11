@@ -5,7 +5,7 @@ import ItemList from "../components/ItemList";
 
 const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState([0])
+    const [productos, setProductos] = useState([])
 
     const mostrarProductos = async () => {
         try {

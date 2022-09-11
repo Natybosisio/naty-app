@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import ItemCount from "../container/ItemCount"
 
-const ItemDetail = ({item, data}) => {
+const ItemDetail = ({item}) => {
 
-    const {itemId} = useParams()
+
 
     return (
         <div className="card">

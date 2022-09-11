@@ -9,7 +9,7 @@ import Registrate from './components/registrate';
 import Footer from'./components/footer';
 
 
-const App = () => {
+const App = (productos, setProductos) => {
 
   return (
     
