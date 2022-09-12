@@ -1,0 +1,12 @@
+
+
+.carrito {
+    display: flex;
+    row-gap: row;
+  }
+  
+  .img-carrito {
+    width: 10%;
+    height: auto;
+    justify-content: flex-end;
+  }

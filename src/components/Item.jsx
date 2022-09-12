@@ -6,13 +6,12 @@ import { Link} from "react-router-dom"
 const Item = ({producto}) => {
     return (
    
-    <div className="card" key={producto.id}>
+    <div className="card" >
+        <div className="posicion-card">
         <img src={producto.thumbnail} className="cards-img" alt="IMAGEN"/>
-        <div className="">
-          <h5 className="span">{producto.title}</h5>
-          <p>{producto.id}</p>
-          <Link to='/producto/:itemId'>
-          <button> Ver Mas</button>
+          <h5 className="title-card">{producto.title}</h5>
+          <Link to={`producto/${producto.id}`}>
+          <button className='boton-ver'> Ver Mas</button>
           </Link>
         </div>
     </div>

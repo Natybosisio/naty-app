@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../components/ItemDetail";
-import ItemListContainer from "./ItemListContainer";
+
 
 const ItemDetailContainer = () => {
 
@@ -11,19 +11,17 @@ const ItemDetailContainer = () => {
 
     const {itemId} = useParams()
 
-    console.log(item)
+    console.log(itemId)
+
     useEffect(()=>{
-        setTimeout(async() => {
-            const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=joyas') 
-             
-            const data = await response.json();
-            setItem(data.results[0])
-            
-            console.log(data)
-      
-        }, 2000);
+        setTimeout(async () => {
+			const response = await fetch(`https://api.mercadolibre.com/items/${itemId}`);
+			const data = await response.json();
+			setItem(data);
+		}, 2000);
+	}, [itemId]);
         
-    },[itemId] );
+    
   
     
     return(
