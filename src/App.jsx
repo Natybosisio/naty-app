@@ -9,14 +9,15 @@ import Registrate from './components/registrate';
 import Footer from './components/footer';
 
 
-const App = (productos, setProductos) => {
+const App = () => {
 
   return (
 
     <div className="App ">
 
       <BrowserRouter>
-        <NavBar />
+      
+      <NavBar/>
 
         <Routes>
           <Route path='/' element={<ItemListContainer />} />

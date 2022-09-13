@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
         <div className="m-5">
             <div className="card-body row">
                 <div className="col-6">
-                <img className='img' src={item.thumbnail} alt="Imagen de Producto" />
+                <img className='img-detail' src={item.thumbnail} alt="Imagen de Producto" />
                 <h5 className="card-title">{item.title}</h5>
                 </div>
                 <div className="col-6">

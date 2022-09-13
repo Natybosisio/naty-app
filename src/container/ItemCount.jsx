@@ -20,7 +20,7 @@ const ItemCount = ({stock, initial})=>{
         }   
         
         const agregar = ()=>{
-            setProducto(alert("se agrego"))
+            setProducto(alert(`se agregaron ${carrito} productos al carrito `))
            
             }
         
