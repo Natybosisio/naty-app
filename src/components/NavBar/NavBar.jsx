@@ -11,6 +11,7 @@ import { NavLink, Link } from "react-router-dom";
 
 function navBar() {
 	const [productos, setProductos] = useState([]);
+	
 	const mostrarProductos = async () => {
 		const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=Joyas`);
 		const data = await response.json();

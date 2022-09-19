@@ -1,26 +1,36 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import CardContext, { useCart} from '../context/cardContex'
 
 const ItemCount = ({stock, initial})=>{
-        const [carrito, setCarrito] = useState(0);    
-        const [producto, setProducto] = useState(0);
+    
+        const {carrito, addCarrito} =  useContext(CardContext);    
+        const {productos, setProductos} = useContext(CardContext);  
+
+const cart = useCart()
 
         const disminuir = ()=>{
             if(carrito >= initial){
-                setCarrito(carrito-1)
+                addCarrito(carrito-1)
             }
-            
+            else{
+                alert('el carrito esta vacio')
+            }
                     }
 
-        const aumentar = () =>{
-            if(carrito < stock){
-                setCarrito(carrito+1)
+        const aumentar = (carrito) =>{
+            if(carrito < initial){
+                let cargar = carrito + 1
+
+                addCarrito(cargar)
+            }
+            else{
+                alert('stock insuficiente')
             }
         
         }   
-        
+        console.log(carrito)
         const agregar = ()=>{
-            setProducto(alert(`se agregaron ${carrito} productos al carrito `))
+            setProductos(alert(`se agregaron ${carrito} productos al carrito `))
            
             }
         
