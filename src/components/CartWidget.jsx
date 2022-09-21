@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Carrito from "./Images/cesteria.png";
 import "../CartWidget.css";
-import CardContext, { useCartContext} from '../context/cardContex'
+import CardContext, { useCartContext} from '../context/CartContex'
 
 function CartWidget (){
 

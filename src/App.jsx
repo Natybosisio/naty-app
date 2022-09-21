@@ -7,8 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import InicioSesion from './components/inicioSesion';
 import Registrate from './components/registrate';
 import Footer from './components/footer';
-import CardContext from './context/cardContex';
-import { CarritoProviader } from './context/cardContex'
+import CartContext from './context/CartContex';
+import { CarritoProviader } from './context/CartContex'
 
 const App = () => {
 
@@ -18,7 +18,7 @@ const App = () => {
 
       <BrowserRouter>
 
-        <CardContext.Provider value={[]}>
+        <CartContext.Provider value={[]}>
         <CarritoProviader>
           <NavBar />
 
@@ -32,7 +32,7 @@ const App = () => {
             <Route path='registrate/' element={<Registrate />} />
           </Routes>
           </CarritoProviader>
-        </CardContext.Provider>
+        </CartContext.Provider>
 
 
         <Footer />

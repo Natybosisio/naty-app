@@ -1,45 +1,38 @@
-import React, { useState, useEffect, useContext } from "react";
-import CardContext, { useCart} from '../context/cardContex'
+import React, { useState, useEffect} from "react";
 
-const ItemCount = ({stock, initial})=>{
-    
-        const {carrito, addCarrito} =  useContext(CardContext);    
-        const {productos, setProductos} = useContext(CardContext);  
 
-const cart = useCart()
+const ItemCount = ({stock, initial, onAdd})=>{
+
+const {countProd, setCountProd} =  useState(initial);    
+
+       
+// useEffect(()=>{
+//     if(initial > stock && stock > 0){
+//         alert("El valor inicial no puede ser mayor al stock")
+//         setCountProd(1)
+//     }
+//     if(stock === 0){
+//       setCountProd(1);
+//     }
+
+// },[initial, stock])
 
         const disminuir = ()=>{
-            if(carrito >= initial){
-                addCarrito(carrito-1)
-            }
-            else{
-                alert('el carrito esta vacio')
-            }
-                    }
+            if(countProd >= initial)setCountProd(countProd - 1)
+                }
 
-        const aumentar = (carrito) =>{
-            if(carrito < initial){
-                let cargar = carrito + 1
+        const aumentar = () =>{
+            if(countProd < stock)setCountProd(countProd + 1)
+            }   
+        console.log(countProd)
 
-                addCarrito(cargar)
-            }
-            else{
-                alert('stock insuficiente')
-            }
-        
-        }   
-        console.log(carrito)
-        const agregar = ()=>{
-            setProductos(alert(`se agregaron ${carrito} productos al carrito `))
-           
-            }
         
         return(
             <div className="itemCount">
                 <button className="controles" onClick={disminuir}>-</button>
-                <span>{carrito}</span>
+                <span>{countProd}</span>
                 <button className="controles" onClick={aumentar}>+</button>                
-                <button className="" onClick={agregar}>Agregar</button>
+                <button className="" onClick={onAdd}>Agregar</button>
             
             </div>
         );
