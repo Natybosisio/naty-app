@@ -12,7 +12,7 @@ return(
         <h4 >Contactanos</h4>
 
     </div>
-                    {/* NO SE COMO HACER UN LINK EXTERNO  */}
+    
     <div>
         <Link to="/"> 
         <img src={instagram} width="40" height="40" alt="logo-instagram"/>

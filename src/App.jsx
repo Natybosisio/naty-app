@@ -7,8 +7,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import InicioSesion from './components/inicioSesion';
 import Registrate from './components/registrate';
 import Footer from './components/footer';
-import CartContext from './context/CartContex';
-import { CarritoProviader } from './context/CartContex'
+import  {CartContex} from './context/CartContex';
+import CartItem from './components/CartItem';
+
 
 const App = () => {
 
@@ -18,22 +19,22 @@ const App = () => {
 
       <BrowserRouter>
 
-        <CartContext.Provider value={[]}>
-        <CarritoProviader>
+        <CartContex>
+        
           <NavBar />
 
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/producto/' element={<ItemDetailContainer />} />
             <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
-            <Route path='/category/:category_ID' element={<ItemListContainer />} />
+            <Route path='/category/:category' element={<ItemListContainer />} />
             <Route path='/category/:category_ID/producto/:itemId' element={<ItemDetailContainer />}/>
             <Route path='inicioSesion/' element={<InicioSesion />} />
             <Route path='registrate/' element={<Registrate />} />
+            <Route path='carrito' element={<CartItem/>}/>
           </Routes>
-          </CarritoProviader>
-        </CartContext.Provider>
-
+          
+        </CartContex>
 
         <Footer />
       </BrowserRouter>

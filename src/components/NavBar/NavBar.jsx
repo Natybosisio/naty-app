@@ -8,19 +8,26 @@ import M01 from "../Images/M-01.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from "../CartWidget";
 import { NavLink, Link } from "react-router-dom";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 function navBar() {
-	const [productos, setProductos] = useState([]);
+	const [category, setCategory] = useState([]);
+	const [id, setId]= useState('')
 	
-	const mostrarProductos = async () => {
-		const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=Joyas`);
-		const data = await response.json();
-		setProductos(data.results);
-		console.log(productos);
-	};
 	useEffect(() => {
-		mostrarProductos();
-	}, []);
+   
+        const db = getFirestore();
+        const items = collection(db, "productos");
+        getDocs(items).then((snapshot) => {
+          const docs = snapshot.docs.filter(doc =>({
+            id: doc.id,
+            category: doc.category
+          }))
+       
+        setCategory(items.category)
+  console.log(items.category)
+        });
+}, [id]);
 
 	return (
 		<Navbar bg='light' expand='lg'>
@@ -43,18 +50,20 @@ function navBar() {
 						</NavDropdown>
 					</Nav>
 					<div className='catalogoNav col-12'>
-						<NavLink to={`category/MLA1438`}>
+						<NavLink to={`category/Oro`}>
 							<li className='tex-decor'>Oro</li>
 						</NavLink>
-						<Link to={`category/MLA1436`}>
+						<Link to={`category/Plata`}>
 							<li className=''>Plata</li>
 						</Link>
-						<Link to={`category/MLA1432`}>
+						<Link to={`category/Piedras`}>
 							<li className=''>Piedras</li>
 						</Link>
 					</div>
 				</Navbar.Collapse>
+				<Link to={`carrito`}>
 				<CartWidget />
+				</Link>
 			</Container>
 		</Navbar>
 	);

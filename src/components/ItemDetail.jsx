@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
 import ItemCount from "../container/ItemCount"
 import "../ItemDetail.css";
-import CartContext from '../context/CartContex';
+import {Context} from '../context/CartContex';
 
 const ItemDetail = ({ item }) => {
 
 const [cantidad, setCantidad] = useState(0);
 
-    const { addItem } = useContext(CartContext)
+    const { addItem } = useContext(Context)
 
     const onAdd = (cant)=>{
-        addItem(item, cant)
+        
         setCantidad(cantidad + cant)
     }
     console.log(cantidad)
@@ -25,7 +25,7 @@ const [cantidad, setCantidad] = useState(0);
                 <div className="col-6">
                     <p className="card-text">Incluir descripcion del producto. ML no tiene incluido este item</p>
                     <p className="card-text">${item.price}</p>
-                    <ItemCount initial='1' stock='5' onAdd={onAdd} />
+                    <ItemCount initial='1' stock='5'/>
                 </div>
             </div>
 
